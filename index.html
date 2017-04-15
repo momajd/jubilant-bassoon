@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HL&amp;P</title>
+    <title class="company-name">HL&amp;P</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>HL&amp;P</a>
+                <a href="#top" onclick=$("#menu-close").click();><span class="company-name">HL&amp;P</span></a>
             </li>
             <li>
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
@@ -64,7 +64,7 @@
         <div class='overlay'></div>
 
         <div class="text-vertical-center">
-            <h1>HL&amp;P</h1>
+            <h1 class="company-name">HL&amp;P</h1>
             <h3>Haul-out &#8226; Landscaping &#8226; Plowing</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">About</a>
@@ -78,7 +78,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About HL&amp;P</h2>
+                    <h2 class="company-name">About HL&amp;P</h2>
                     <p class="lead">Licensed, insured, and with over two decades of experience, HL&amp;P is a full
                       service professional Hauling, Landscaping, &amp; Plowing contractor. We make our
                       clients our top priority, which is why the majority of our business comes from
@@ -239,7 +239,7 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=4220+Powelton+Avenue,+Philadelphia,+PA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=Twitter&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
     </section>
 
     <!-- Footer -->
@@ -247,13 +247,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>HL&amp;P</strong>
+                    <h4 class="company-name"><strong>HL&amp;P</strong>
                     </h4>
                     <p>4220 Powelton Avenue
                         <br>Philadelphia, PA 19104</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (215) 855-5231</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:info@hlptrucks.com">info@hlptrucks.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7891</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:info@example.com">info@example.com</a>
                         </li>
                     </ul>
                     <br>
@@ -266,7 +266,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; HL&amp;Ptrucks 2016</p>
+                    <p class="text-muted">Copyright &copy; <span class="company-name">HL&amp;Ptrucks</span> 2017</p>
                 </div>
             </div>
         </div>
@@ -351,6 +351,22 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+    </script>
+
+    <!-- Custom title from url fragment -->
+    <script>
+      var title = window.location.hash;
+      title = title.slice(1);
+      title = title.split("-").join(" ");
+
+      var elements = document.getElementsByClassName("company-name");
+
+      if (title) {
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].innerHTML = title;
+        }
+      }
+
     </script>
 
 </body>
